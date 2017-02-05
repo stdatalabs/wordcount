@@ -19,7 +19,7 @@ public class WordCountMapper extends Mapper<LongWritable, Text, Text, IntWritabl
 	public void map(LongWritable key, Text value, Context context)
 			throws IOException, InterruptedException {
 		
-		String line = value.toString().replaceAll("[^\\w\\s]|['s|ly|ed|ing|ness]$", "").toLowerCase();
+		String line = value.toString().replaceAll("[^\\w\\s]|('s|ly|ed|ing|ness) ", " ").toLowerCase();
 
 		StringTokenizer tokenizer = new StringTokenizer(line);
 		while (tokenizer.hasMoreTokens()) {

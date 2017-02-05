@@ -31,9 +31,17 @@ object Driver {
 
   def main(args: Array[String]) {
     val file = sc.textFile(args(0))
-    val lines = file.map(line => line.replaceAll("[^\\w\\s]|['s|ly|ed|ing|ness]$", ""))
-    val wcRDD = lines.flatMap(line => line.split(" ")).map(word => (word, 1)).reduceByKey(_ + _)
+    val lines = file.map(line => line.replaceAll("[^\\w\\s]|('s|ly|ed|ing|ness) ", " ").toLowerCase())
+    val wcRDD = lines.flatMap(line => line.split(" ").filter(_.nonEmpty)).map(word => (word, 1)).reduceByKey(_ + _)
     val sortedRDD = wcRDD.sortBy(_._2, false)
+
+    val hadoopConf = new org.apache.hadoop.conf.Configuration()
+    val hdfs = org.apache.hadoop.fs.FileSystem.get(new java.net.URI("hdfs://quickstart.cloudera:8020"), hadoopConf)
+    try {
+      hdfs.delete(new org.apache.hadoop.fs.Path(args(1)), true)
+    } catch {
+      case _: Throwable => {}
+    }
     sortedRDD.saveAsTextFile(args(1))
   }
 

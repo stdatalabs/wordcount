@@ -1,5 +1,19 @@
 package com.stdatalabs.mapreduce.wordcount;
 
+/*#############################################################################################
+# Description: WordCount using Map Reduce
+##
+# Input: 
+#   1. /user/cloudera/MarkTwain.txt
+#
+# To Run this code use the command:    
+# yarn jar wordcount-0.0.1-SNAPSHOT.jar \
+#		   com.stdatalabs.mapreduce.wordcount.WordCountDriver \
+#		   MarkTwain.txt \
+#		   mrWordCount \
+#		   mrWordCount_sorted
+#############################################################################################*/
+
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
