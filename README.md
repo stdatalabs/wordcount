@@ -20,7 +20,7 @@ The repository contains both MapReduce and Spark projects MRWordCount and SparkW
     * WordCountDriver.java -- Driver program for MapReduce jobs
 
 ## Description
-* ##### A comparison between MapReduce and Apache Spark RDD code using wordcount example 
+* A comparison between MapReduce and Apache Spark RDD code using wordcount example 
   Discussed in blog -- 
      [MapReduce VS Spark - Wordcount Example](http://stdatalabs.blogspot.in/2017/02/mapreduce-vs-spark-wordcount-example.html)
 
