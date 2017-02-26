@@ -24,5 +24,5 @@ The repository contains both MapReduce and Spark projects MRWordCount and SparkW
   Discussed in blog -- 
      [MapReduce VS Spark - Wordcount Example](http://stdatalabs.blogspot.in/2017/02/mapreduce-vs-spark-wordcount-example.html)
 
-### More articles on hadoop technology stack at [stdatalabs](stdatalabs.blogspot.com)
+### More articles on hadoop technology stack at [stdatalabs](http://stdatalabs.blogspot.com)
 
